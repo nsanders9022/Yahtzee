@@ -206,6 +206,7 @@ $(document).ready(function() {
     $("#result-overall-total").text(grandTotal(parseInt($("#result-left-total").text()), parseInt($("#result-right-total").text())));
 
     // diceArray = [];
+    $(".hold").hide()
 
     diceOne.amount = "";
     diceOne.hold = false;
@@ -256,21 +257,21 @@ $(document).ready(function() {
     diceFive.roll();
 
     // $("#dice-one").text(diceOne.amount);
-    $("#dice-one").html('<img src="img/' + diceOne.amount + '.svg">');
+    $("#dice-one").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceOne.amount + '.svg">');
 
-    $("#dice-two").html('<img src="img/' + diceTwo.amount + '.svg">');
-    $("#dice-three").html('<img src="img/' + diceThree.amount + '.svg">');
-    $("#dice-four").html('<img src="img/' + diceFour.amount + '.svg">');
-    $("#dice-five").html('<img src="img/' + diceFive.amount + '.svg">');
+    $("#dice-two").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceTwo.amount + '.svg">');
+    $("#dice-three").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceThree.amount + '.svg">');
+    $("#dice-four").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceFour.amount + '.svg">');
+    $("#dice-five").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceFive.amount + '.svg">');
 
     getDiceArray();
 
-    console.log(diceOne.amount)
+    $(".hold").show();
 
     if (rollCount > 2) {
       $("#roll-button").hide();
+      $(".hold").hide();
     }
-
 
 
   })
