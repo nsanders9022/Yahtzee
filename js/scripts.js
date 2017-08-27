@@ -1,4 +1,5 @@
 var diceArray = [];
+
 function Player(name, score, id) {
   this.name = name;
   this.score = score;
@@ -93,11 +94,15 @@ function threeFourKind(number){
   return 0;
 }
 
-
+function fullHouse() {
+  if (((diceArray[0] === diceArray[1] && diceArray[2] === diceArray[0]) && (diceArray[3] === diceArray[4])) || ((diceArray[0] === diceArray[1]) && (diceArray[3] === diceArray[2] && diceArray[3] === diceArray[4]))) {
+    return 25;
+  }
+  return 0;
+}
 
 function smallStraight() {
   var count = 0
-
   for (var i = 0; i < diceArray.length - 1; i++) {
     if (diceArray[i] + 1 !== diceArray[i+1]) {
       count++
@@ -169,10 +174,6 @@ $(document).ready(function() {
     $("#name").text(playerName + "\'s ");
   })
 
-  $("#playOnes").click(function() {
-    $("#result-ones").text(0);
-  })
-
   $("#roll-button").click(function() {
     diceArray = [];
 
@@ -181,7 +182,6 @@ $(document).ready(function() {
     diceThree.roll();
     diceFour.roll();
     diceFive.roll();
-
 
     $("#dice-one").text(diceOne.amount);
     $("#dice-two").text(diceTwo.amount);
@@ -259,10 +259,11 @@ $(document).ready(function() {
     $("#playSixes").hide();
   })
 
-  $("#playSmallStraight").click(function() {
-    $("#result-small-straight").text(smallStraight());
-    $("#playsmallStraight").hide();
+  $("#playFullHouse").click(function() {
+    $("#result-full-house").text(fullHouse());
+    // $("#playFullHouse").hide();
   })
+
 
   $("#playThreeKind").click(function() {
     $("#result-three-kind").text(threeFourKind(3));
@@ -272,6 +273,11 @@ $(document).ready(function() {
   $("#playFourKind").click(function() {
     $("#result-four-kind").text(threeFourKind(4));
     $("#playLargeStraight").hide();
+  })
+
+  $("#playSmallStraight").click(function() {
+    $("#result-small-straight").text(smallStraight());
+    $("#playsmallStraight").hide();
   })
 
   $("#playLargeStraight").click(function() {
