@@ -255,15 +255,17 @@ $(document).ready(function() {
     diceFour.roll();
     diceFive.roll();
 
-    $("#dice-one").text(diceOne.amount);
-    $("#dice-two").text(diceTwo.amount);
-    $("#dice-three").text(diceThree.amount);
-    $("#dice-four").text(diceFour.amount);
-    $("#dice-five").text(diceFive.amount);
+    // $("#dice-one").text(diceOne.amount);
+    $("#dice-one").html('<img src="img/' + diceOne.amount + '.JPG">');
+
+    $("#dice-two").html('<img src="img/' + diceTwo.amount + '.JPG">');
+    $("#dice-three").html('<img src="img/' + diceThree.amount + '.JPG">');
+    $("#dice-four").html('<img src="img/' + diceFour.amount + '.JPG">');
+    $("#dice-five").html('<img src="img/' + diceFive.amount + '.JPG">');
 
     getDiceArray();
 
-    console.log(rollCount)
+    console.log(diceOne.amount)
 
     if (rollCount > 2) {
       $("#roll-button").hide();
