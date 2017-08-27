@@ -1,4 +1,4 @@
-var diceAmount = [];
+var diceArray = [];
 function Player(name, score, id) {
   this.name = name;
   this.score = score;
@@ -28,20 +28,20 @@ var diceFour = new Dice(0, false, 4);
 var diceFive = new Dice(0, false, 5);
 
 
-function getDice() {
-  diceAmount.push(diceOne.amount);
-  diceAmount.push(diceTwo.amount);
-  diceAmount.push(diceThree.amount);
-  diceAmount.push(diceFour.amount);
-  diceAmount.push(diceFive.amount);
+function getDiceArray() {
+  diceArray.push(diceOne.amount);
+  diceArray.push(diceTwo.amount);
+  diceArray.push(diceThree.amount);
+  diceArray.push(diceFour.amount);
+  diceArray.push(diceFive.amount);
 
-  return diceAmount.sort();
+  diceArray.sort();
 }
 
 function multiples(number) {
   var count = 0;
-  for (var i = 0; i < diceAmount.length; i++) {
-    if (diceAmount[i] === number) {
+  for (var i = 0; i < diceArray.length; i++) {
+    if (diceArray[i] === number) {
       count ++;
     }
   }
@@ -49,13 +49,25 @@ function multiples(number) {
 }
 
 function yahtzee() {
-  for (var i = 0; i < diceAmount.length; i++) {
-    if (diceAmount[i] !== diceAmount[0]) {
+  for (var i = 0; i < diceArray.length; i++) {
+    if (diceArray[i] !== diceArray[0]) {
       return 0;
     }
   }
   return 50;
 }
+
+function largeStraight() {
+  getDiceArray();
+
+  for (var i = 0; i < diceArray.length - 1; i++) {
+    if (diceArray[i] + 1 === diceArray[i+1]) {
+      return 40
+    }
+  }
+  return 0;
+}
+
 
 // Play.prototype.AddPoints = function(amount){
 //   this.score = amount;
@@ -101,7 +113,7 @@ $(document).ready(function() {
   })
 
   $("#roll-button").click(function() {
-    diceAmount = [];
+    diceArray = [];
 
     diceOne.roll();
     diceTwo.roll();
@@ -114,10 +126,6 @@ $(document).ready(function() {
     $("#dice-three").text(diceThree.amount);
     $("#dice-four").text(diceFour.amount);
     $("#dice-five").text(diceFive.amount);
-
-    console.log(getDice());
-    console.log(multiples(1));
-    console.log(multiples(4));
   })
 
   // $(".hold").click(function(){
@@ -185,6 +193,12 @@ $(document).ready(function() {
     $("#result-sixes").text(multiples(6));
     $("#playSixes").hide();
   })
+
+  $("#playLargeStraight").click(function() {
+    $("#result-large-straight").text(largeStraight());
+    $("#playLargeStraight").hide();
+  })
+
 
   $("#playYahtzee").click(function() {
     $("#result-yahtzee").text(yahtzee());
