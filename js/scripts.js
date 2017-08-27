@@ -256,12 +256,12 @@ $(document).ready(function() {
     diceFive.roll();
 
     // $("#dice-one").text(diceOne.amount);
-    $("#dice-one").html('<img src="img/' + diceOne.amount + '.JPG">');
+    $("#dice-one").html('<img src="img/' + diceOne.amount + '.svg">');
 
-    $("#dice-two").html('<img src="img/' + diceTwo.amount + '.JPG">');
-    $("#dice-three").html('<img src="img/' + diceThree.amount + '.JPG">');
-    $("#dice-four").html('<img src="img/' + diceFour.amount + '.JPG">');
-    $("#dice-five").html('<img src="img/' + diceFive.amount + '.JPG">');
+    $("#dice-two").html('<img src="img/' + diceTwo.amount + '.svg">');
+    $("#dice-three").html('<img src="img/' + diceThree.amount + '.svg">');
+    $("#dice-four").html('<img src="img/' + diceFour.amount + '.svg">');
+    $("#dice-five").html('<img src="img/' + diceFive.amount + '.svg">');
 
     getDiceArray();
 
