@@ -8,6 +8,10 @@ h1 {
   border: 1px solid black;
 }
 
+.col-xs-6 {
+  margin-bottom: 10px;
+}
+
 .playName, #name {
   font-weight: bold;
 }

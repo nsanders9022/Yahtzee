@@ -14,6 +14,7 @@ var largeStraightTotal = 0;
 var yahtzeeTotal = 0;
 var extraYahtzeeTotal = 0;
 var chanceTotal = 0;
+var rollCount = 0;
 
 function Player(name, score, id) {
   this.name = name;
@@ -50,7 +51,6 @@ function getDiceArray() {
   diceArray.push(diceThree.amount);
   diceArray.push(diceFour.amount);
   diceArray.push(diceFive.amount);
-
   diceArray.sort();
 }
 
@@ -112,7 +112,6 @@ function threeFourKind(number){
   {
     return sumDiceArray()
   }
-  console.log(count1 + " " + count5)
   return 0;
 }
 
@@ -162,7 +161,6 @@ function extraYahtzee(yahtzeePoints) {
       return 0;
     }
   }
-
   if (yahtzeePoints === "50") {
     return 100;
   } else if (yahtzeePoints === "") {
@@ -201,11 +199,9 @@ $(document).ready(function() {
     $("#name").text(playerName + "\'s ");
   })
 
-
-
   $("#roll-button").click(function() {
     diceArray = [];
-
+    rollCount++;
     diceOne.roll();
     diceTwo.roll();
     diceThree.roll();
@@ -230,6 +226,15 @@ $(document).ready(function() {
     $("#result-right-total").text(rightTotal(threeKindTotal, fourKindTotal, fullHouseTotal, smallStraightTotal, largeStraightTotal, yahtzeeTotal,extraYahtzeeTotal, chanceTotal));
 
     $("#result-overall-total").text(grandTotal(parseInt($("#result-left-total").text()), parseInt($("#result-right-total").text())));
+
+    console.log(rollCount)
+
+    if (rollCount > 2) {
+      $("#roll-button").hide();
+    }
+
+
+
   })
 
   $("#diceOne").click(function() {
@@ -238,6 +243,7 @@ $(document).ready(function() {
         return text === "Hold" ? "Unhold" : "Hold";
     })
   })
+
   $("#diceTwo").click(function() {
     diceTwo.toggleHold();
     $(this).text(function(i, text){
@@ -267,74 +273,96 @@ $(document).ready(function() {
     $("#result-ones").text(multiples(1));
     $("#playOnes").hide();
     onesTotal = parseInt($("#result-ones").text());
-    console.log(onesTotal);
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playTwos").click(function() {
     $("#result-twos").text(multiples(2));
     $("#playTwos").hide();
     twosTotal = parseInt($("#result-twos").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playThrees").click(function() {
     $("#result-threes").text(multiples(3));
     $("#playThrees").hide();
     threesTotal = parseInt($("#result-threes").text());
-
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playFours").click(function() {
     $("#result-fours").text(multiples(4));
     $("#playFours").hide();
     foursTotal = parseInt($("#result-fours").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playFives").click(function() {
     $("#result-fives").text(multiples(5));
     $("#playFives").hide();
     fivesTotal = parseInt($("#result-fives").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playSixes").click(function() {
     $("#result-sixes").text(multiples(6));
     $("#playSixes").hide();
     sixesTotal = parseInt($("#result-sixes").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playFullHouse").click(function() {
     $("#result-full-house").text(fullHouse());
     $("#playFullHouse").hide();
     fullHouseTotal = parseInt($("#result-full-house").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playThreeKind").click(function() {
     $("#result-three-kind").text(threeFourKind(3));
     $("#playThreeKind").hide();
     threeKindTotal = parseInt($("#result-three-kind").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playFourKind").click(function() {
     $("#result-four-kind").text(threeFourKind(4));
     $("#playFourKind").hide();
     fourKindTotal = parseInt($("#result-four-kind").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playSmallStraight").click(function() {
     $("#result-small-straight").text(smallStraight());
     $("#playSmallStraight").hide();
     smallStraightTotal = parseInt($("#result-small-straight").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playLargeStraight").click(function() {
     $("#result-large-straight").text(largeStraight());
     $("#playLargeStraight").hide();
     largeStraightTotal = parseInt($("#result-large-straight").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playYahtzee").click(function() {
     $("#result-yahtzee").text(yahtzee());
     $("#playYahtzee").hide();
     yahtzeeTotal = parseInt($("#result-yahtzee").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playExtraYahtzee").click(function() {
@@ -344,12 +372,16 @@ $(document).ready(function() {
       $("#playExtraYahtzee").hide();
     }
     extraYahtzeeTotal = parseInt($("#result-extra-yahtzee").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
   $("#playChance").click(function() {
     $("#result-chance").text(chance());
     $("#playChance").hide();
     chanceTotal = parseInt($("#result-chance").text());
+    rollCount = 0;
+    $("#roll-button").show();
   })
 
 })
