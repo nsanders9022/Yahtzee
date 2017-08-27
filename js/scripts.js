@@ -15,6 +15,7 @@ var yahtzeeTotal = 0;
 var extraYahtzeeTotal = 0;
 var chanceTotal = 0;
 var rollCount = 0;
+var submitCount = 14;
 
 function Player(name, score, id) {
   this.name = name;
@@ -194,6 +195,9 @@ $(document).ready(function() {
   function updateTotals(){
 
     rollCount = 0;
+    submitCount--;
+    console.log(submitCount);
+
     $("#roll-button").show();
 
     $("#result-bonus").text(bonus(onesTotal, twosTotal, threesTotal, foursTotal, fivesTotal, sixesTotal));
@@ -234,7 +238,14 @@ $(document).ready(function() {
     diceFive.hold = false;
     $("#diceFive").text("Hold");
     $("#dice-five").text(diceFive.amount);
+    
+    if (submitCount === 0 ) {
+      $(".end").show();
+    }
   }
+
+
+
 
   $("#name-form").submit(function(event) {
     event.preventDefault();
