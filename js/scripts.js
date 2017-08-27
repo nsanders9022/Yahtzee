@@ -48,14 +48,21 @@ function multiples(number) {
   return count * number;
 }
 
-function yahtzee() {
-  for (var i = 0; i < diceArray.length; i++) {
-    if (diceArray[i] !== diceArray[0]) {
-      return 0;
+function smallStraight() {
+  var count = 0
+  getDiceArray();
+
+  for (var i = 0; i < diceArray.length - 1; i++) {
+    if (diceArray[i] + 1 !== diceArray[i+1]) {
+      count++
     }
   }
-  return 50;
+  if (count <= 1) {
+    return 30;
+  }
+  return 0
 }
+
 
 function largeStraight() {
   getDiceArray();
@@ -67,6 +74,16 @@ function largeStraight() {
   }
   return 0;
 }
+
+function yahtzee() {
+  for (var i = 0; i < diceArray.length; i++) {
+    if (diceArray[i] !== diceArray[0]) {
+      return 0;
+    }
+  }
+  return 50;
+}
+
 
 
 // Play.prototype.AddPoints = function(amount){
@@ -194,11 +211,15 @@ $(document).ready(function() {
     $("#playSixes").hide();
   })
 
+  $("#playSmallStraight").click(function() {
+    $("#result-small-straight").text(smallStraight());
+    $("#playsmallStraight").hide();
+  })
+
   $("#playLargeStraight").click(function() {
     $("#result-large-straight").text(largeStraight());
     $("#playLargeStraight").hide();
   })
-
 
   $("#playYahtzee").click(function() {
     $("#result-yahtzee").text(yahtzee());
