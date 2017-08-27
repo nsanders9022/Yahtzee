@@ -11,7 +11,9 @@ function Dice(amount, hold, id) {
 }
 
 Dice.prototype.roll = function() {
-  this.amount = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+  if (this.hold === false) {
+    this.amount = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+  }
 }
 
 Dice.prototype.markHold = function() {
@@ -84,5 +86,25 @@ $(document).ready(function() {
     $("#dice-five").text(diceFive.amount);
   })
 
+  // $(".hold").click(function(){
+  //   var dice = this.id;
+  //   dice.markHold();
+  // })
+
+  $("#diceOne").click(function() {
+    diceOne.markHold();
+  })
+  $("#diceTwo").click(function() {
+    diceTwo.markHold();
+  })
+  $("#diceThree").click(function() {
+    diceThree.markHold();
+  })
+  $("#diceFour").click(function() {
+    diceFour.markHold();
+  })
+  $("#diceFive").click(function() {
+    diceFive.markHold();
+  })
 
 })
