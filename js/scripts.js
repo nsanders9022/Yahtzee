@@ -34,7 +34,7 @@ var diceOne = new Dice(0, false, 1);
 var diceTwo = new Dice(0, false, 2);
 var diceThree = new Dice(0, false, 3);
 var diceFour = new Dice(0, false, 4);
-var diceFive = new Dice(0, false, 5;
+var diceFive = new Dice(0, false, 5);
 
 
 var ones = new Play("ones", true, 0);
@@ -62,6 +62,27 @@ $(document).ready(function() {
     var playerName = $("#playerName").val();
 
     var player1 = new Player(playerName, 0, 1)
+
+    $("#name").text(playerName + "\'s ");
   })
+
+  $("#playOnes").click(function() {
+    $("#result-ones").text(0);
+  })
+
+  $("#roll-button").click(function() {
+    diceOne.roll();
+    diceTwo.roll();
+    diceThree.roll();
+    diceFour.roll();
+    diceFive.roll();
+
+    $("#dice-one").text(diceOne.amount);
+    $("#dice-two").text(diceTwo.amount);
+    $("#dice-three").text(diceThree.amount);
+    $("#dice-four").text(diceFour.amount);
+    $("#dice-five").text(diceFive.amount);
+  })
+
 
 })

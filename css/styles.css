@@ -4,7 +4,7 @@
   border: 1px solid black;
 }
 
-.playName {
+.playName, #name {
   font-weight: bold;
 }
 
@@ -12,4 +12,9 @@
   border: 1px solid green;
   padding-left: 45%;
   padding-right: 45%;
+}
+
+#total, .column-totals, #roll-button {
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
