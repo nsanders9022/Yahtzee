@@ -1,3 +1,6 @@
+////////ADD CHANCE///////
+
+
 var diceArray = [];
 var onesTotal = 0;
 var twosTotal = 0;
@@ -13,6 +16,7 @@ var smallStraightTotal = 0;
 var largeStraightTotal = 0;
 var yahtzeeTotal = 0;
 var extraYahtzeeTotal = 0;
+var chanceTotal = 0;
 // var leftTotal = 0;
 // var rightTotal = 0;
 
@@ -173,12 +177,16 @@ function extraYahtzee(yahtzeePoints) {
   }
 }
 
+function chance(){
+  return sumDiceArray();
+}
+
 function leftTotal(one, two, three, four, five, six, bonus) {
   return one + two + three + four + five + six + bonus;
 }
 
-function rightTotal(threeK, fourk, fullH, smallS, largeS, yahtzee, extraY) {
-  return threeK + fourk + fullH + smallS + largeS + yahtzee + extraY;
+function rightTotal(threeK, fourk, fullH, smallS, largeS, yahtzee, extraY, chance) {
+  return threeK + fourk + fullH + smallS + largeS + yahtzee + extraY + chance;
 }
 
 function grandTotal(left, right) {
@@ -226,7 +234,7 @@ $(document).ready(function() {
 
     // leftTotal = parseInt($("#result-left-total").text());
 
-    $("#result-right-total").text(rightTotal(threeKindTotal, fourKindTotal, fullHouseTotal, smallStraightTotal, largeStraightTotal, yahtzeeTotal,extraYahtzeeTotal));
+    $("#result-right-total").text(rightTotal(threeKindTotal, fourKindTotal, fullHouseTotal, smallStraightTotal, largeStraightTotal, yahtzeeTotal,extraYahtzeeTotal, chanceTotal));
 
     // rightTotal = parseInt($("#result-right-total").text());
 
@@ -345,6 +353,12 @@ $(document).ready(function() {
       $("#playExtraYahtzee").hide();
     }
     extraYahtzeeTotal = parseInt($("#result-extra-yahtzee").text());
+  })
+
+  $("#playChance").click(function() {
+    $("#result-chance").text(chance());
+    // $("#playChance").hide();
+    chanceTotal = parseInt($("#result-chance").text());
   })
 
 })
