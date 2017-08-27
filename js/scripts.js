@@ -1,6 +1,3 @@
-////////ADD CHANCE///////
-
-
 var diceArray = [];
 var onesTotal = 0;
 var twosTotal = 0;
@@ -17,8 +14,6 @@ var largeStraightTotal = 0;
 var yahtzeeTotal = 0;
 var extraYahtzeeTotal = 0;
 var chanceTotal = 0;
-// var leftTotal = 0;
-// var rightTotal = 0;
 
 function Player(name, score, id) {
   this.name = name;
@@ -232,13 +227,9 @@ $(document).ready(function() {
 
     $("#result-left-total").text(leftTotal(onesTotal, twosTotal, threesTotal, foursTotal, fivesTotal, sixesTotal, bonusTotal));
 
-    // leftTotal = parseInt($("#result-left-total").text());
-
     $("#result-right-total").text(rightTotal(threeKindTotal, fourKindTotal, fullHouseTotal, smallStraightTotal, largeStraightTotal, yahtzeeTotal,extraYahtzeeTotal, chanceTotal));
 
-    // rightTotal = parseInt($("#result-right-total").text());
-
-    // $("#result-overall-total").text(grandTotal(parseInt($("#result-left-total").text()), parseInt($("#result-right-total").text()));
+    $("#result-overall-total").text(grandTotal(parseInt($("#result-left-total").text()), parseInt($("#result-right-total").text())));
   })
 
   $("#diceOne").click(function() {
