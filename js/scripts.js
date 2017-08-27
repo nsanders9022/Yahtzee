@@ -38,6 +38,16 @@ function getDice() {
   return diceAmount.sort();
 }
 
+function multiples(number) {
+  var count = 0;
+  for (var i = 0; i < diceAmount.length; i++) {
+    if (diceAmount[i] === number) {
+      count ++;
+    }
+  }
+  return count * number;
+}
+
 // Play.prototype.AddPoints = function(amount){
 //   this.score = amount;
 // }
@@ -97,6 +107,8 @@ $(document).ready(function() {
     $("#dice-five").text(diceFive.amount);
 
     console.log(getDice());
+    console.log(multiples(1));
+    console.log(multiples(4));
   })
 
   // $(".hold").click(function(){
@@ -133,6 +145,36 @@ $(document).ready(function() {
     $(this).text(function(i, text){
         return text === "Hold" ? "Unhold" : "Hold";
     })
+  })
+
+  $("#playOnes").click(function() {
+    $("#result-ones").text(multiples(1));
+    $("#playOnes").hide();
+  })
+
+  $("#playTwos").click(function() {
+    $("#result-twos").text(multiples(2));
+    $("#playTwos").hide();
+  })
+
+  $("#playThrees").click(function() {
+    $("#result-threes").text(multiples(3));
+    $("#playThrees").hide();
+  })
+
+  $("#playFours").click(function() {
+    $("#result-fours").text(multiples(4));
+    $("#playFours").hide();
+  })
+
+  $("#playFives").click(function() {
+    $("#result-fives").text(multiples(5));
+    $("#playFives").hide();
+  })
+
+  $("#playSixes").click(function() {
+    $("#result-sixes").text(multiples(6));
+    $("#playSixes").hide();
   })
 
 })
