@@ -33,6 +33,10 @@ h1 {
   border: 1px solid black;
   padding-left: 45%;
   padding-right: 45%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 16px;
+  background-color: white;
 }
 
 #total, .column-totals, #roll-button {
