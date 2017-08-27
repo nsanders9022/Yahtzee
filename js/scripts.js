@@ -242,6 +242,8 @@ $(document).ready(function() {
     var player1 = new Player(playerName, 0, 1)
 
     $("#name").text(playerName + "\'s ");
+
+    $(".form-div").hide();
   })
 
   $("#roll-button").click(function() {
