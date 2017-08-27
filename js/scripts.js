@@ -4,18 +4,21 @@ function Player(name, score, id) {
   this.id = id;
 }
 
-function Dice(number, hold, id) {
-  this.number = number;
+function Dice(amount, hold, id) {
+  this.amount = amount;
   this.hold = hold;
   this.id = id;
 }
 
 Dice.prototype.roll = function() {
-  return Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+  this.amount = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+}
+
+Dice.prototype.markHold = function() {
+  this.hold = true;
 }
 
 function ScoreCard(){};
-
 
 Play.prototype.AddPoints = function(amount){
   this.score = amount;
@@ -27,7 +30,12 @@ function Play(name, available, score) {
   this.score = score;
 }
 
-var playNames = ["ones", "twos", "threes", "fours", "fives", "sixes", "bonus", "threeKind", "fourKind", "fullHouse", "smallStraight", "largeStraight", "yahtzee", "extraYahtzee", "chance"];
+var diceOne = new Dice(0, false, 1);
+var diceTwo = new Dice(0, false, 2);
+var diceThree = new Dice(0, false, 3);
+var diceFour = new Dice(0, false, 4);
+var diceFive = new Dice(0, false, 5;
+
 
 var ones = new Play("ones", true, 0);
 var twos = new Play("twos", true, 0);
@@ -45,4 +53,15 @@ var yahtzee = new Play("yahtzee", true, 0);
 var extraYahtzee = new Play("extraYahtzee", true, 0);
 var chance = new Play("chance", true, 0);
 
-var playerOne = new Player("Nicole", 0, 1);
+//////////////////////////////////////////////////////////////////////////////////////////
+
+$(document).ready(function() {
+  $("#name-form").submit(function(event) {
+    event.preventDefault();
+
+    var playerName = $("#playerName").val();
+
+    var player1 = new Player(playerName, 0, 1)
+  })
+
+})

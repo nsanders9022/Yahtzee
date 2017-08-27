@@ -1,0 +1,15 @@
+.board {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.playName {
+  font-weight: bold;
+}
+
+.playResult {
+  border: 1px solid green;
+  padding-left: 45%;
+  padding-right: 45%;
+}
