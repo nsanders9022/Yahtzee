@@ -166,6 +166,7 @@ function extraYahtzee(yahtzeePoints) {
     return 100;
   } else if (yahtzeePoints === "") {
     alert("You must fill in yahtzee first")
+    submitCount++;
   } else {
     return 0;
   }
@@ -238,7 +239,8 @@ $(document).ready(function() {
     diceFive.hold = false;
     $("#diceFive").text("Hold");
     $("#dice-five").text(diceFive.amount);
-    
+
+
     if (submitCount === 0 ) {
       $(".end").show();
     }
@@ -430,6 +432,10 @@ $(document).ready(function() {
     chanceTotal = parseInt($("#result-chance").text());
 
     updateTotals();
+  })
+
+  $("#no").click(function() {
+    $("#end-text").hide();
   })
 
 })

@@ -14,13 +14,19 @@
     <h1>Yahtzee</h1>
 
     <div class="end">
-      <h1>Game Over</h1>
+      <form id="end-text" class="form-group">
+        <h1>Game Over</h1>
+        <label>Play Again?</label>
+        <br>
+        <input type="button" value="Yes" class="replay-button btn btn-primary" id = "yes" onClick="window.location.reload()">
+        <input type="button" value="No" class="replay-button btn btn-warning" id="no">
+      </form>
     </div>
 
     <div class="form-div">
       <form id="name-form" class="form-group">
         <label for="playerName">Enter your name:</label>
-        <input type="text" name="playerName" id="playerName">
+        <input type="text" name="playerName" id="playerName" class="form-control">
         <button type="submit" class="btn btn-primary" name="button">Play</button>
       </form>
     </div>
