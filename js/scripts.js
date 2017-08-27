@@ -16,9 +16,10 @@ Dice.prototype.roll = function() {
   }
 }
 
-Dice.prototype.markHold = function() {
-  this.hold = true;
+Dice.prototype.toggleHold = function() {
+  this.hold = !this.hold;
 }
+
 
 function ScoreCard(){};
 
@@ -92,19 +93,34 @@ $(document).ready(function() {
   // })
 
   $("#diceOne").click(function() {
-    diceOne.markHold();
+    diceOne.toggleHold();
+    $(this).text(function(i, text){
+        return text === "Hold" ? "Unhold" : "Hold";
+    })
   })
   $("#diceTwo").click(function() {
-    diceTwo.markHold();
+    diceTwo.toggleHold();
+    $(this).text(function(i, text){
+        return text === "Hold" ? "Unhold" : "Hold";
+    })
   })
   $("#diceThree").click(function() {
-    diceThree.markHold();
+    diceThree.toggleHold();
+    $(this).text(function(i, text){
+        return text === "Hold" ? "Unhold" : "Hold";
+    })
   })
   $("#diceFour").click(function() {
-    diceFour.markHold();
+    diceFour.toggleHold();
+    $(this).text(function(i, text){
+        return text === "Hold" ? "Unhold" : "Hold";
+    })
   })
   $("#diceFive").click(function() {
-    diceFive.markHold();
+    diceFive.toggleHold();
+    $(this).text(function(i, text){
+        return text === "Hold" ? "Unhold" : "Hold";
+    })
   })
 
 })
