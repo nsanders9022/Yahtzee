@@ -205,18 +205,33 @@ $(document).ready(function() {
 
     $("#result-overall-total").text(grandTotal(parseInt($("#result-left-total").text()), parseInt($("#result-right-total").text())));
 
+    // diceArray = [];
+
     diceOne.amount = "";
+    diceOne.hold = false;
+    $("#diceOne").text("Hold");
     $("#dice-one").text(diceOne.amount);
+
+
     diceTwo.amount = "";
+    diceTwo.hold = false;
+    $("#diceTwo").text("Hold");
     $("#dice-two").text(diceTwo.amount);
+
     diceThree.amount = "";
+    diceThree.hold = false;
+    $("#diceThree").text("Hold");
     $("#dice-three").text(diceThree.amount);
+
     diceFour.amount = "";
+    diceFour.hold = false;
+    $("#diceFour").text("Hold");
     $("#dice-four").text(diceFour.amount);
+
     diceFive.amount = "";
+    diceFive.hold = false;
+    $("#diceFive").text("Hold");
     $("#dice-five").text(diceFive.amount);
-    diceSiz.amount = "";
-    $("#dice-siz").text(diceSiz.amount);
   }
 
   $("#name-form").submit(function(event) {
@@ -288,13 +303,15 @@ $(document).ready(function() {
     })
   })
 
-  $("#playOnes").click(function() {
-    $("#result-ones").text(multiples(1));
-    $("#playOnes").hide();
-    onesTotal = parseInt($("#result-ones").text());
+  if (diceArray.length > 0) {
+    $("#playOnes").click(function() {
+      $("#result-ones").text(multiples(1));
+      $("#playOnes").hide();
+      onesTotal = parseInt($("#result-ones").text());
 
-    updateTotals();
-  })
+      updateTotals();
+    })
+  }
 
   $("#playTwos").click(function() {
     $("#result-twos").text(multiples(2));
