@@ -38,6 +38,14 @@ function getDiceArray() {
   diceArray.sort();
 }
 
+function sumDiceArray() {
+  var sum = 0;
+  for (var i = 0; i < diceArray.length; i++) {
+    sum += diceArray[i];
+  }
+  return sum;
+}
+
 function multiples(number) {
   var count = 0;
   for (var i = 0; i < diceArray.length; i++) {
@@ -48,9 +56,47 @@ function multiples(number) {
   return count * number;
 }
 
+function threeFourKind(number){
+  var count1 = 0;
+  var count2 = 0;
+  var count3 = 0;
+  var count4 = 0;
+  var count5 = 0;
+  var count6 = 0;
+
+  for (var i = 0; i < diceArray.length; i++) {
+    if (diceArray[i] === 1) {
+      count1++;
+    }
+    if (diceArray[i] === 2) {
+      count2++;
+    }
+    if (diceArray[i] === 3) {
+      count3++;
+    }
+    if (diceArray[i] === 4) {
+      count4++;
+    }
+    if (diceArray[i] === 5) {
+      count5++;
+    }
+    if (diceArray[i] === 6) {
+      count6++;
+    }
+  }
+
+  if (count1 >= number || count2 >= number || count3 >= number || count4 >= number || count5 >= number || count6 >= number)
+  {
+    return sumDiceArray()
+  }
+  console.log(count1 + " " + count5)
+  return 0;
+}
+
+
+
 function smallStraight() {
   var count = 0
-  getDiceArray();
 
   for (var i = 0; i < diceArray.length - 1; i++) {
     if (diceArray[i] + 1 !== diceArray[i+1]) {
@@ -63,9 +109,7 @@ function smallStraight() {
   return 0
 }
 
-
 function largeStraight() {
-  getDiceArray();
 
   for (var i = 0; i < diceArray.length - 1; i++) {
     if (diceArray[i] + 1 === diceArray[i+1]) {
@@ -138,11 +182,15 @@ $(document).ready(function() {
     diceFour.roll();
     diceFive.roll();
 
+
     $("#dice-one").text(diceOne.amount);
     $("#dice-two").text(diceTwo.amount);
     $("#dice-three").text(diceThree.amount);
     $("#dice-four").text(diceFour.amount);
     $("#dice-five").text(diceFive.amount);
+
+    getDiceArray();
+    console.log(sumDiceArray())
   })
 
   // $(".hold").click(function(){
@@ -214,6 +262,16 @@ $(document).ready(function() {
   $("#playSmallStraight").click(function() {
     $("#result-small-straight").text(smallStraight());
     $("#playsmallStraight").hide();
+  })
+
+  $("#playThreeKind").click(function() {
+    $("#result-three-kind").text(threeFourKind(3));
+    $("#playLargeStraight").hide();
+  })
+
+  $("#playFourKind").click(function() {
+    $("#result-four-kind").text(threeFourKind(4));
+    $("#playLargeStraight").hide();
   })
 
   $("#playLargeStraight").click(function() {
