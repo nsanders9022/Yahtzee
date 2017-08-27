@@ -303,15 +303,13 @@ $(document).ready(function() {
     })
   })
 
-  if (diceArray.length > 0) {
-    $("#playOnes").click(function() {
-      $("#result-ones").text(multiples(1));
-      $("#playOnes").hide();
-      onesTotal = parseInt($("#result-ones").text());
+  $("#playOnes").click(function() {
+    $("#result-ones").text(multiples(1));
+    $("#playOnes").hide();
+    onesTotal = parseInt($("#result-ones").text());
 
-      updateTotals();
-    })
-  }
+    updateTotals();
+  })
 
   $("#playTwos").click(function() {
     $("#result-twos").text(multiples(2));
