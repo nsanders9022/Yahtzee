@@ -144,11 +144,11 @@ function smallStraight() {
 function largeStraight() {
 
   for (var i = 0; i < diceArray.length - 1; i++) {
-    if (diceArray[i] + 1 === diceArray[i+1]) {
-      return 40;
+    if (diceArray[i] + 1 !== diceArray[i+1]) {
+      return 0;
     }
-    return 0;
   }
+  return 40;
 }
 
 function yahtzee() {
@@ -357,7 +357,7 @@ $(document).ready(function() {
 
   $("#playChance").click(function() {
     $("#result-chance").text(chance());
-    // $("#playChance").hide();
+    $("#playChance").hide();
     chanceTotal = parseInt($("#result-chance").text());
   })
 
