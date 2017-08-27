@@ -1,4 +1,11 @@
 var diceArray = [];
+var onesTotal = 0;
+var twosTotal = 0;
+var threesTotal = 0;
+var foursTotal = 0;
+var fivesTotal = 0;
+var sixesTotal = 0;
+var bonusTotal = 0;
 
 function Player(name, score, id) {
   this.name = name;
@@ -55,6 +62,17 @@ function multiples(number) {
     }
   }
   return count * number;
+}
+
+function bonus(one, two, three, four, five, six) {
+  if (one + two + three + four + five + six > 62 ) {
+    return 35;
+  }
+  return 0;
+}
+
+function leftTotal(one, two, three, four, five, six, bonus) {
+  return one + two + three + four + five + six + bonus;
 }
 
 function threeFourKind(number){
@@ -118,10 +136,10 @@ function largeStraight() {
 
   for (var i = 0; i < diceArray.length - 1; i++) {
     if (diceArray[i] + 1 === diceArray[i+1]) {
-      return 40
+      return 40;
     }
+    return 0;
   }
-  return 0;
 }
 
 function yahtzee() {
@@ -189,6 +207,8 @@ $(document).ready(function() {
     $("#name").text(playerName + "\'s ");
   })
 
+
+
   $("#roll-button").click(function() {
     diceArray = [];
 
@@ -205,13 +225,14 @@ $(document).ready(function() {
     $("#dice-five").text(diceFive.amount);
 
     getDiceArray();
-    console.log(sumDiceArray())
-  })
 
-  // $(".hold").click(function(){
-  //   var dice = this.id;
-  //   dice.markHold();
-  // })
+
+    $("#result-bonus").text(bonus(onesTotal, twosTotal, threesTotal, foursTotal, fivesTotal, sixesTotal));
+
+    bonusTotal = parseInt($("#result-bonus").text());
+
+    $("#result-left-total").text(leftTotal(onesTotal, twosTotal, threesTotal, foursTotal, fivesTotal, sixesTotal, bonusTotal));
+  })
 
   $("#diceOne").click(function() {
     diceOne.toggleHold();
@@ -247,52 +268,59 @@ $(document).ready(function() {
   $("#playOnes").click(function() {
     $("#result-ones").text(multiples(1));
     $("#playOnes").hide();
+    onesTotal = parseInt($("#result-ones").text());
+    console.log(onesTotal);
   })
 
   $("#playTwos").click(function() {
     $("#result-twos").text(multiples(2));
     $("#playTwos").hide();
+    twosTotal = parseInt($("#result-twos").text());
   })
 
   $("#playThrees").click(function() {
     $("#result-threes").text(multiples(3));
     $("#playThrees").hide();
+    threesTotal = parseInt($("#result-threes").text());
+
   })
 
   $("#playFours").click(function() {
     $("#result-fours").text(multiples(4));
     $("#playFours").hide();
+    foursTotal = parseInt($("#result-fours").text());
   })
 
   $("#playFives").click(function() {
     $("#result-fives").text(multiples(5));
     $("#playFives").hide();
+    fivesTotal = parseInt($("#result-fives").text());
   })
 
   $("#playSixes").click(function() {
     $("#result-sixes").text(multiples(6));
     $("#playSixes").hide();
+    sixesTotal = parseInt($("#result-sixes").text());
   })
 
   $("#playFullHouse").click(function() {
     $("#result-full-house").text(fullHouse());
-    // $("#playFullHouse").hide();
+    $("#playFullHouse").hide();
   })
-
 
   $("#playThreeKind").click(function() {
     $("#result-three-kind").text(threeFourKind(3));
-    $("#playLargeStraight").hide();
+    $("#playThreeKind").hide();
   })
 
   $("#playFourKind").click(function() {
     $("#result-four-kind").text(threeFourKind(4));
-    $("#playLargeStraight").hide();
+    $("#playFourKind").hide();
   })
 
   $("#playSmallStraight").click(function() {
     $("#result-small-straight").text(smallStraight());
-    $("#playsmallStraight").hide();
+    $("#playSmallStraight").hide();
   })
 
   $("#playLargeStraight").click(function() {
