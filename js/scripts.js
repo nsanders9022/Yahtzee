@@ -189,6 +189,7 @@ function grandTotal(left, right) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
+  $(".hold").hide();
 
   function updateTotals(){
 
@@ -258,7 +259,6 @@ $(document).ready(function() {
 
     // $("#dice-one").text(diceOne.amount);
     $("#dice-one").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceOne.amount + '.svg">');
-
     $("#dice-two").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceTwo.amount + '.svg">');
     $("#dice-three").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceThree.amount + '.svg">');
     $("#dice-four").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceFour.amount + '.svg">');
@@ -272,8 +272,6 @@ $(document).ready(function() {
       $("#roll-button").hide();
       $(".hold").hide();
     }
-
-
   })
 
   $("#diceOne").click(function() {
