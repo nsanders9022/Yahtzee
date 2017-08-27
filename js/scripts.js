@@ -204,6 +204,19 @@ $(document).ready(function() {
     $("#result-right-total").text(rightTotal(threeKindTotal, fourKindTotal, fullHouseTotal, smallStraightTotal, largeStraightTotal, yahtzeeTotal,extraYahtzeeTotal, chanceTotal));
 
     $("#result-overall-total").text(grandTotal(parseInt($("#result-left-total").text()), parseInt($("#result-right-total").text())));
+
+    diceOne.amount = "";
+    $("#dice-one").text(diceOne.amount);
+    diceTwo.amount = "";
+    $("#dice-two").text(diceTwo.amount);
+    diceThree.amount = "";
+    $("#dice-three").text(diceThree.amount);
+    diceFour.amount = "";
+    $("#dice-four").text(diceFour.amount);
+    diceFive.amount = "";
+    $("#dice-five").text(diceFive.amount);
+    diceSiz.amount = "";
+    $("#dice-siz").text(diceSiz.amount);
   }
 
   $("#name-form").submit(function(event) {
@@ -287,7 +300,7 @@ $(document).ready(function() {
     $("#result-twos").text(multiples(2));
     $("#playTwos").hide();
     twosTotal = parseInt($("#result-twos").text());
-    
+
     updateTotals();
   })
 
@@ -295,7 +308,7 @@ $(document).ready(function() {
     $("#result-threes").text(multiples(3));
     $("#playThrees").hide();
     threesTotal = parseInt($("#result-threes").text());
-    
+
     updateTotals();
   })
 
@@ -303,7 +316,7 @@ $(document).ready(function() {
     $("#result-fours").text(multiples(4));
     $("#playFours").hide();
     foursTotal = parseInt($("#result-fours").text());
-    
+
     updateTotals();
   })
 
@@ -311,7 +324,7 @@ $(document).ready(function() {
     $("#result-fives").text(multiples(5));
     $("#playFives").hide();
     fivesTotal = parseInt($("#result-fives").text());
-    
+
     updateTotals();
   })
 
@@ -319,7 +332,7 @@ $(document).ready(function() {
     $("#result-sixes").text(multiples(6));
     $("#playSixes").hide();
     sixesTotal = parseInt($("#result-sixes").text());
-    
+
     updateTotals();
   })
 
@@ -327,7 +340,7 @@ $(document).ready(function() {
     $("#result-full-house").text(fullHouse());
     $("#playFullHouse").hide();
     fullHouseTotal = parseInt($("#result-full-house").text());
-    
+
     updateTotals();
   })
 
@@ -335,7 +348,7 @@ $(document).ready(function() {
     $("#result-three-kind").text(threeFourKind(3));
     $("#playThreeKind").hide();
     threeKindTotal = parseInt($("#result-three-kind").text());
-    
+
     updateTotals();
   })
 
@@ -343,7 +356,7 @@ $(document).ready(function() {
     $("#result-four-kind").text(threeFourKind(4));
     $("#playFourKind").hide();
     fourKindTotal = parseInt($("#result-four-kind").text());
-    
+
     updateTotals();
   })
 
@@ -351,7 +364,7 @@ $(document).ready(function() {
     $("#result-small-straight").text(smallStraight());
     $("#playSmallStraight").hide();
     smallStraightTotal = parseInt($("#result-small-straight").text());
-    
+
     updateTotals();
   })
 
@@ -359,7 +372,7 @@ $(document).ready(function() {
     $("#result-large-straight").text(largeStraight());
     $("#playLargeStraight").hide();
     largeStraightTotal = parseInt($("#result-large-straight").text());
-    
+
     updateTotals();
   })
 
@@ -367,7 +380,7 @@ $(document).ready(function() {
     $("#result-yahtzee").text(yahtzee());
     $("#playYahtzee").hide();
     yahtzeeTotal = parseInt($("#result-yahtzee").text());
-    
+
     updateTotals();
   })
 
@@ -378,7 +391,7 @@ $(document).ready(function() {
       $("#playExtraYahtzee").hide();
     }
     extraYahtzeeTotal = parseInt($("#result-extra-yahtzee").text());
-    
+
     updateTotals();
   })
 
@@ -386,7 +399,7 @@ $(document).ready(function() {
     $("#result-chance").text(chance());
     $("#playChance").hide();
     chanceTotal = parseInt($("#result-chance").text());
-    
+
     updateTotals();
   })
 
