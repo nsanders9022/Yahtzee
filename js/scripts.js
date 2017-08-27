@@ -116,7 +116,7 @@ function threeFourKind(number){
 }
 
 function fullHouse() {
-  if (((diceArray[0] === diceArray[1] && diceArray[2] === diceArray[0]) && (diceArray[3] === diceArray[4])) || ((diceArray[0] === diceArray[1]) && (diceArray[3] === diceArray[2] && diceArray[3] === diceArray[4]))) {
+  if (((diceArray[0] === diceArray[1] && diceArray[2] === diceArray[0]) && (diceArray[3] === diceArray[4]) && diceArray[0] !== diceArray[4]) || ((diceArray[0] === diceArray[1]) && (diceArray[3] === diceArray[2] && diceArray[3] === diceArray[4]) && diceArray[0] !== diceArray[4])) {
     return 25;
   }
   return 0;
