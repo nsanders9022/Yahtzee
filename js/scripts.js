@@ -6,6 +6,13 @@ var foursTotal = 0;
 var fivesTotal = 0;
 var sixesTotal = 0;
 var bonusTotal = 0;
+var threeKindTotal = 0;
+var fourKindTotal = 0;
+var fullHouseTotal = 0;
+var smallStraightTotal = 0;
+var largeStraightTotal = 0;
+var yahtzeeTotal = 0;
+var extraYahtzeeTotal = 0;
 
 function Player(name, score, id) {
   this.name = name;
@@ -69,10 +76,6 @@ function bonus(one, two, three, four, five, six) {
     return 35;
   }
   return 0;
-}
-
-function leftTotal(one, two, three, four, five, six, bonus) {
-  return one + two + three + four + five + six + bonus;
 }
 
 function threeFourKind(number){
@@ -168,31 +171,17 @@ function extraYahtzee(yahtzeePoints) {
   }
 }
 
-// Play.prototype.AddPoints = function(amount){
-//   this.score = amount;
-// }
+function leftTotal(one, two, three, four, five, six, bonus) {
+  return one + two + three + four + five + six + bonus;
+}
 
-// function Play(name, available, score) {
-//   this.name =  name;
-//   this.available = available;
-//   this.score = score;
-// }
+function rightTotal(threeK, fourk, fullH, smallS, largeS, yahtzee, extraY) {
+  return threeK + fourk + fullH + smallS + largeS + yahtzee + extraY;
+}
 
-// var ones = new Play("ones", true, 0);
-// var twos = new Play("twos", true, 0);
-// var threes = new Play("threes", true, 0);
-// var fours = new Play("fours", true, 0);
-// var fives = new Play("fives", true, 0);
-// var sixes = new Play("sixes", true, 0);
-// var bonus = new Play("bonus", true, 0);
-// var threeKind = new Play("threeKind", true, 0);
-// var fourKind = new Play("fourKind", true, 0);
-// var fullHouse = new Play("fullHouse", true, 0);
-// var smallStraight = new Play("smallStraight", true, 0);
-// var largeStraignt = new Play("largeStraignt", true, 0);
-// var yahtzee = new Play("yahtzee", true, 0);
-// var extraYahtzee = new Play("extraYahtzee", true, 0);
-// var chance = new Play("chance", true, 0);
+function grandTotal(left, right) {
+  return left + right;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -232,6 +221,8 @@ $(document).ready(function() {
     bonusTotal = parseInt($("#result-bonus").text());
 
     $("#result-left-total").text(leftTotal(onesTotal, twosTotal, threesTotal, foursTotal, fivesTotal, sixesTotal, bonusTotal));
+
+    $("#result-right-total").text(rightTotal(threeKindTotal, fourKindTotal, fullHouseTotal, smallStraightTotal, largeStraightTotal, yahtzeeTotal,extraYahtzeeTotal));
   })
 
   $("#diceOne").click(function() {
@@ -306,31 +297,37 @@ $(document).ready(function() {
   $("#playFullHouse").click(function() {
     $("#result-full-house").text(fullHouse());
     $("#playFullHouse").hide();
+    fullHouseTotal = parseInt($("#result-full-house").text());
   })
 
   $("#playThreeKind").click(function() {
     $("#result-three-kind").text(threeFourKind(3));
     $("#playThreeKind").hide();
+    threeKindTotal = parseInt($("#result-three-kind").text());
   })
 
   $("#playFourKind").click(function() {
     $("#result-four-kind").text(threeFourKind(4));
     $("#playFourKind").hide();
+    fourKindTotal = parseInt($("#result-four-kind").text());
   })
 
   $("#playSmallStraight").click(function() {
     $("#result-small-straight").text(smallStraight());
     $("#playSmallStraight").hide();
+    smallStraightTotal = parseInt($("#result-small-straight").text());
   })
 
   $("#playLargeStraight").click(function() {
     $("#result-large-straight").text(largeStraight());
     $("#playLargeStraight").hide();
+    largeStraightTotal = parseInt($("#result-large-straight").text());
   })
 
   $("#playYahtzee").click(function() {
     $("#result-yahtzee").text(yahtzee());
     $("#playYahtzee").hide();
+    yahtzeeTotal = parseInt($("#result-yahtzee").text());
   })
 
   $("#playExtraYahtzee").click(function() {
@@ -339,6 +336,7 @@ $(document).ready(function() {
     if ($("#result-yahtzee").text() !== "" || $("#result-extra-yahtzee").text() === "0"){
       $("#playExtraYahtzee").hide();
     }
+    extraYahtzeeTotal = parseInt($("#result-extra-yahtzee").text());
   })
 
 })
