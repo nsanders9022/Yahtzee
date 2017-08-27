@@ -133,7 +133,22 @@ function yahtzee() {
   return 50;
 }
 
+function extraYahtzee(yahtzeePoints) {
 
+  for (var i = 0; i < diceArray.length; i++) {
+    if (diceArray[i] !== diceArray[0]) {
+      return 0;
+    }
+  }
+
+  if (yahtzeePoints === "50") {
+    return 100;
+  } else if (yahtzeePoints === "") {
+    alert("You must fill in yahtzee first")
+  } else {
+    return 0;
+  }
+}
 
 // Play.prototype.AddPoints = function(amount){
 //   this.score = amount;
@@ -288,6 +303,14 @@ $(document).ready(function() {
   $("#playYahtzee").click(function() {
     $("#result-yahtzee").text(yahtzee());
     $("#playYahtzee").hide();
+  })
+
+  $("#playExtraYahtzee").click(function() {
+    $("#result-extra-yahtzee").text(extraYahtzee($("#result-yahtzee").text()));
+
+    if ($("#result-yahtzee").text() !== "" || $("#result-extra-yahtzee").text() === "0"){
+      $("#playExtraYahtzee").hide();
+    }
   })
 
 })
