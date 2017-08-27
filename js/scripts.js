@@ -48,6 +48,15 @@ function multiples(number) {
   return count * number;
 }
 
+function yahtzee() {
+  for (var i = 0; i < diceAmount.length; i++) {
+    if (diceAmount[i] !== diceAmount[0]) {
+      return 0;
+    }
+  }
+  return 50;
+}
+
 // Play.prototype.AddPoints = function(amount){
 //   this.score = amount;
 // }
@@ -175,6 +184,11 @@ $(document).ready(function() {
   $("#playSixes").click(function() {
     $("#result-sixes").text(multiples(6));
     $("#playSixes").hide();
+  })
+
+  $("#playYahtzee").click(function() {
+    $("#result-yahtzee").text(yahtzee());
+    $("#playYahtzee").hide();
   })
 
 })
