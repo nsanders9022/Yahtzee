@@ -192,6 +192,8 @@ function grandTotal(left, right) {
 
 $(document).ready(function() {
   $(".hold").hide();
+  $("#dots").html('<img class="dots-img" src="img/' + rollCount + 'dots.png">');
+
 
   function updateTotals(){
 
@@ -213,6 +215,9 @@ $(document).ready(function() {
 
     // diceArray = [];
     $(".hold").hide()
+
+    $("#dots").html('<img class="dots-img" src="img/' + rollCount + 'dots.png">');
+    
 
     diceOne.amount = "";
     diceOne.hold = false;
@@ -264,6 +269,10 @@ $(document).ready(function() {
   $("#roll-button").click(function() {
     diceArray = [];
     rollCount++;
+    $("#dots").html('<img class="dots-img" src="img/' + rollCount + 'dots.png">');
+    console.log(rollCount)
+
+
     diceOne.roll();
     diceTwo.roll();
     diceThree.roll();
