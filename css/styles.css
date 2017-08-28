@@ -125,15 +125,17 @@ input {
 }
 
 .dice {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
 .hold {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
+  padding: 10% 0;
   background-color: maroon;
   color: white;
+  font-size: 16px;
 }
 
 .hold:visited {
