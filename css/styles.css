@@ -17,6 +17,11 @@ h1 {
   font-size: 80px;
 }
 
+h2 {
+  font-size: 70px;
+  font-weight: bold;
+}
+
 .form-div, .end {
   position: fixed; /* Sit on top of the page content */
   width: 100%; /* Full width (cover the whole page) */
@@ -32,11 +37,14 @@ h1 {
 
 form{
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   text-align: center;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+  background-color: rgba(140, 140, 140, 0.8);
+  padding: 5%;
+
 }
 .end {
   display: none;
@@ -55,6 +63,8 @@ input {
 .btn-primary, .btn-warning {
   font-size:25px;
   margin-top: 12px;
+  margin-left: 5px;
+  width: 20%;
 }
 
 .board {
