@@ -191,7 +191,7 @@ function grandTotal(left, right) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
-  $(".hold").hide();
+
   $("#dots").html('<img class="dots-img" src="img/' + rollCount + 'dots.png">');
 
 
@@ -213,36 +213,28 @@ $(document).ready(function() {
 
     $("#result-overall-total").text(grandTotal(parseInt($("#result-left-total").text()), parseInt($("#result-right-total").text())));
 
-    // diceArray = [];
-    $(".hold").hide()
-
     $("#dots").html('<img class="dots-img" src="img/' + rollCount + 'dots.png">');
-    
+
 
     diceOne.amount = "";
     diceOne.hold = false;
-    $("#diceOne").text("Hold");
     $("#dice-one").text(diceOne.amount);
 
 
     diceTwo.amount = "";
     diceTwo.hold = false;
-    $("#diceTwo").text("Hold");
     $("#dice-two").text(diceTwo.amount);
 
     diceThree.amount = "";
     diceThree.hold = false;
-    $("#diceThree").text("Hold");
     $("#dice-three").text(diceThree.amount);
 
     diceFour.amount = "";
     diceFour.hold = false;
-    $("#diceFour").text("Hold");
     $("#dice-four").text(diceFour.amount);
 
     diceFive.amount = "";
     diceFive.hold = false;
-    $("#diceFive").text("Hold");
     $("#dice-five").text(diceFive.amount);
 
 
@@ -279,53 +271,87 @@ $(document).ready(function() {
     diceFour.roll();
     diceFive.roll();
 
-    // $("#dice-one").text(diceOne.amount);
-    $("#dice-one").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceOne.amount + '.svg">');
-    $("#dice-two").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceTwo.amount + '.svg">');
-    $("#dice-three").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceThree.amount + '.svg">');
-    $("#dice-four").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceFour.amount + '.svg">');
-    $("#dice-five").html('<img class="dice" alt="' + diceOne.amount + ' " src="img/' + diceFive.amount + '.svg">');
+    $("#dice-one").html('<img id="dice-one-img" class="dice" alt="' + diceOne.amount + ' " src="img/' + diceOne.amount + '.svg">');
+    if (diceOne.hold === true) {
+      $("#dice-one-img").addClass("dice-hold")
+    } else {
+      $("#dice-one-img").removeClass("dice-hold")
+    }
+    $("#dice-two").html('<img id="dice-two-img" class="dice" alt="' + diceOne.amount + ' " src="img/' + diceTwo.amount + '.svg">');
+    if (diceTwo.hold === true) {
+      $("#dice-two-img").addClass("dice-hold")
+    } else {
+      $("#dice-two-img").removeClass("dice-hold")
+    }
+    $("#dice-three").html('<img id="dice-three-img" class="dice" alt="' + diceOne.amount + ' " src="img/' + diceThree.amount + '.svg">');
+    if (diceThree.hold === true) {
+      $("#dice-three-img").addClass("dice-hold")
+    } else {
+      $("#dice-three-img").removeClass("dice-hold")
+    }
+    $("#dice-four").html('<img id="dice-four-img" class="dice" alt="' + diceOne.amount + ' " src="img/' + diceFour.amount + '.svg">');
+    if (diceFour.hold === true) {
+      $("#dice-four-img").addClass("dice-hold")
+    } else {
+      $("#dice-four-img").removeClass("dice-hold")
+    }
+    $("#dice-five").html('<img id="dice-five-img" class="dice" alt="' + diceOne.amount + ' " src="img/' + diceFive.amount + '.svg">');
+    if (diceFive.hold === true) {
+      $("#dice-five-img").addClass("dice-hold")
+    } else {
+      $("#dice-five-img").removeClass("dice-hold")
+    }
 
     getDiceArray();
 
-    $(".hold").show();
-
     if (rollCount > 2) {
       $("#roll-button").hide();
-      $(".hold").hide();
     }
   })
 
-  $("#diceOne").click(function() {
+  $("#dice-one").click(function() {
     diceOne.toggleHold();
-    $(this).text(function(i, text){
-        return text === "Hold" ? "Unhold" : "Hold";
-    })
+    if (diceOne.hold === true) {
+      $("#dice-one-img").toggleClass("dice-hold")
+    } else {
+      $("#dice-one-img").removeClass("dice-hold")
+    }
+    // $(this).text(function(i, text){
+    //     return text === "Hold" ? "Unhold" : "Hold";
+    // })
   })
 
-  $("#diceTwo").click(function() {
+  $("#dice-two").click(function() {
     diceTwo.toggleHold();
-    $(this).text(function(i, text){
-        return text === "Hold" ? "Unhold" : "Hold";
-    })
+    if (diceTwo.hold === true) {
+      $("#dice-two-img").addClass("dice-hold")
+    } else {
+      $("#dice-two-img").removeClass("dice-hold")
+    }
   })
-  $("#diceThree").click(function() {
+  $("#dice-three").click(function() {
     diceThree.toggleHold();
-    $(this).text(function(i, text){
-        return text === "Hold" ? "Unhold" : "Hold";
-    })
+    if (diceThree.hold === true) {
+      $("#dice-three-img").addClass("dice-hold")
+    } else {
+      $("#dice-three-img").removeClass("dice-hold")
+    }
   })
-  $("#diceFour").click(function() {
+  $("#dice-four").click(function() {
     diceFour.toggleHold();
-    $(this).text(function(i, text){
-        return text === "Hold" ? "Unhold" : "Hold";
-    })
+    if (diceFour.hold === true) {
+      $("#dice-four-img").addClass("dice-hold")
+    } else {
+      $("#dice-four-img").removeClass("dice-hold")
+    }
   })
-  $("#diceFive").click(function() {
+  $("#dice-five").click(function() {
     diceFive.toggleHold();
-    $(this).text(function(i, text){
-        return text === "Hold" ? "Unhold" : "Hold";
-    })
+    if (diceFive.hold === true) {
+      $("#dice-five-img").addClass("dice-hold")
+    } else {
+      $("#dice-five-img").removeClass("dice-hold")
+    }
   })
 
   $("#playOnes").click(function() {
