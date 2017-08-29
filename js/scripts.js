@@ -194,6 +194,8 @@ $(document).ready(function() {
 
   $("#dots").html('<img class="dots-img" src="img/' + rollCount + 'dots.png">');
 
+  $(".btn-submit").attr('disabled', 'disabled');
+
 
   function updateTotals(){
 
@@ -241,6 +243,8 @@ $(document).ready(function() {
     if (submitCount === 0 ) {
       $(".end").show();
     }
+
+    $(".btn-submit").attr('disabled', 'disabled');
   }
 
 
@@ -259,6 +263,7 @@ $(document).ready(function() {
   })
 
   $("#roll-button").click(function() {
+    $(".btn-submit").removeAttr('disabled');
     diceArray = [];
     rollCount++;
     $("#dots").html('<img class="dots-img" src="img/' + rollCount + 'dots.png">');
