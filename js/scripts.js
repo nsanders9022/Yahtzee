@@ -18,12 +18,14 @@ var chanceTotal = 0;
 var rollCount = 0;
 var submitCount = 14;
 var playerCount = 0;
+var playerArray = [];
+var players = {}
 
 //Constructor for Player Object
-function Player(name, score, id) {
+function Player(name) {
   this.name = name;
-  this.score = score;
-  this.id = id;
+  this.score = 0;
+  // this.id = id;
 }
 
 //Constructor for Dice Object
@@ -243,6 +245,7 @@ function usernameFields() {
     var input = document.createElement("input");
     input.type = "text";
     input.name = "player" + i;
+    input.id = "player" + i;
     input.class = "playerNameInput";
     nameForm.appendChild(input);
     nameForm.appendChild(document.createElement("br"));
@@ -250,11 +253,15 @@ function usernameFields() {
 
   var button = document.createElement("button");
   button.setAttribute("class","btn btn-primary");
+  button.setAttribute("id", "name-button");
+  button.setAttribute("name", "button");
   var buttonText = document.createTextNode("Play");
   button.appendChild(buttonText);
   nameForm.appendChild(button)
 
 }
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -341,14 +348,25 @@ $(document).ready(function() {
     $(".player-count").hide();
     usernameFields();
     $("#name-div").show()
+
+    $("#name-button").click(function() {
+      $("#name-div").hide();
+      for (var i = 0; i < playerCount; i++) {
+        var playerName = $("#player" + [i]).val();
+        playerArray.push(playerName);
+        players[playerName] = Object.create(Player);
+        playerName.name = playerArray[i];
+        console.log('player ' + ('player' + i) + " created!");
+      }
+    })
+
+
+
+
+
+
   })
 
-  $("#name-form").submit(function(event) {
-    event.preventDefault();
-
-
-
-  })
 
 
 
