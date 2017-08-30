@@ -1,16 +1,169 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <script src="js/jquery-3.2.1.js"></script>
-    <script src="js/scripts.js"></script>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    </script>
-    <title>Yahtzee</title>
-  </head>
-  <body class="container">
+</script>
+<title>Yahtzee</title>
+</head>
+<body >
+
+  <div class="topnav" id="myTopnav">
+    <a data-toggle="modal" data-target="#howPlay">How to Play</a>
+    <a data-toggle="modal" data-target="#rules">Rules</a>
+    <a data-toggle="modal" data-target="#scoring">Scoring</a>
+    <a onClick="window.location.reload()">Restart game</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+
+
+
+
+  <div class="container">
+
+    <div id="howPlay" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3 class="modal-title">How to Play</h3>
+          </div>
+          <div class="modal-body">
+            <p>To begin the game press on the green "roll dice" button.</p>
+            <p>Click on the image of the dice you want to hold.</p>
+            <p>After clicking "roll dice" again all dice that have not been held will be rolled.</p>
+            <p>The dots on the "roll dice" button signify how many more rolls are left before you must submit your points</p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div id="rules" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3 class="modal-title">Rules</h3>
+          </div>
+          <div class="modal-body">
+            <h4>Game Summary</h4>
+            <p>The object of Yahtzee is to obtain the highest score from throwing 5 dice.</p>
+            <p>The game consists of 14 rounds. On each turn, roll the dice up to 3 times to get the highest scoring combination for one of 14 categories. The score is determined by a different rule for each category.</p>
+            <p>After you finish rolling, you must submit a score or a zero in one of the categories.</p>
+
+            <h4>Game Play</h4>
+
+            <p>To start with, roll all the dice. After rolling you can either score the current roll (see below), or re-roll any or all of the dice.</p>
+
+            <p>You may only roll the dice a total of 3 times. After rolling 3 times you must choose a category to score.</p>
+
+            <p>You may score the dice at any point in the round, i.e. it doesn't have to be after the 3rd roll.</p>
+
+            <h4>Ending a Game</h4>
+            <p>The game ends once all 14 categories have been scored.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div id="scoring" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3 class="modal-title">Scoring</h3>
+          </div>
+          <div class="modal-body">
+            <table>
+              <tr>
+                <th>Category</th>
+                <th>What to Score</th>
+              </tr>
+              <tr>
+                <td>Ones</td>
+                <td>Total of Ones only</td>
+              </tr>
+              <tr>
+                <td>Twos</td>
+                <td>Total of Twos only</td>
+              </tr>
+              <tr>
+                <td>Threes</td>
+                <td>Total of Threes only</td>
+              </tr>
+              <tr>
+                <td>Fours</td>
+                <td>Total of Fours only</td>
+              </tr>
+              <tr>
+                <td>Fives</td>
+                <td>Total of Fives only</td>
+              </tr>
+              <tr>
+                <td>Sixes</td>
+                <td>Total of Sixes only</td>
+              </tr>
+              <tr>
+                <td>3 of a Kind</td>
+                <td>Total of all 5 dice</td>
+              </tr>
+              <tr>
+                <td>4 of a Kind</td>
+                <td>Total of all 5 dice</td>
+              </tr>
+              <tr>
+                <td>Full House (3 of one kind, 2 of another kind)</td>
+                <td>25 points</td>
+              </tr>
+              <tr>
+                <td>Small Straight</td>
+                <td>30 points</td>
+              </tr>
+              <tr>
+                <td>Large Straight</td>
+                <td>40 points</td>
+              </tr>
+              <tr>
+                <td>Yahtzee (5 of a Kind)</td>
+                <td>50 points</td>
+              </tr>
+              <tr>
+                <td>Extra Yahtzee</td>
+                <td>100 points</td>
+              </tr>
+              <tr>
+                <td>Chance</td>
+                <td>Total of all 5 dice</td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
     <h1>Yacht Sea</h1>
 
     <div class="end">
@@ -59,7 +212,7 @@
 
         <div class="col-xs-6">
           <div class="col-xs-5">
-            <span class="playName">Three of a Kind</span>
+            <span class="playName">3 of a Kind</span>
           </div>
           <div class="col-xs-3">
             <span id="result-three-kind" class="playResult"></span>
@@ -84,7 +237,7 @@
         </div>
         <div class="col-xs-6">
           <div class="col-xs-5">
-            <span class="playName">Four of a Kind</span>
+            <span class="playName">4 of a Kind</span>
           </div>
           <div class="col-xs-3">
             <span id="result-four-kind" class="playResult"></span>
@@ -197,7 +350,6 @@
 
       <div class="row">
         <div class="col-xs-6">
-
         </div>
         <div class="col-xs-6">
           <div class="col-xs-5">
@@ -279,5 +431,6 @@
       </div>
     </div>
 
-  </body>
+  </div>
+</body>
 </html>
