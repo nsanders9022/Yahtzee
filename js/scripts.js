@@ -17,6 +17,7 @@ var extraYahtzeeTotal = 0;
 var chanceTotal = 0;
 var rollCount = 0;
 var submitCount = 14;
+var playerCount = 0;
 
 //Constructor for Player Object
 function Player(name, score, id) {
@@ -225,7 +226,25 @@ function myFunction() {
     }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////
+function usernameFields() {
+  var nameForm = document.getElementById("name-form");
+
+  while (nameForm.hasChildNodes()) {
+    nameForm.removeChild(nameForm.lastChild);
+  }
+
+  for (i = 0; i < playerCount; i++) {
+    nameForm.appendChild(document.createTextNode("Player" + (i+1) + " user name"));
+
+    var input = document.createElement("input");
+    input.type = "text";
+    input.name = "player" + i;
+    nameForm.appendChild(input);
+    nameForm.appendChild(document.createElement("br"));
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
 
@@ -288,17 +307,39 @@ $(document).ready(function() {
   }
 
   //Name overlay form
+  // $("#name-form").submit(function(event) {
+  //   event.preventDefault();
+  //   //gets the value of the name entered
+  //   var playerName = $("#playerName").val();
+  //   //instantiates player object with that name
+  //   var player1 = new Player(playerName, 0, 1)
+  //   //displays the name on the score board
+  //   $("#name").text(playerName + "\'s ");
+  //   //hides the name overlay
+  //   $(".form-div").hide();
+  // })
+
+  $("#player-count").submit(function(event) {
+    event.preventDefault();
+
+    playerCount = parseInt($("input:radio[name=count]:checked").val());
+
+    console.log(playerCount);
+
+    $(".player-count").hide();
+    usernameFields();
+    $("#name-div").show()
+  })
+
   $("#name-form").submit(function(event) {
     event.preventDefault();
-    //gets the value of the name entered
-    var playerName = $("#playerName").val();
-    //instantiates player object with that name
-    var player1 = new Player(playerName, 0, 1)
-    //displays the name on the score board
-    $("#name").text(playerName + "\'s ");
-    //hides the name overlay
-    $(".form-div").hide();
+
+
+
   })
+
+
+
 
   //What happens when the roll button is clicked
   $("#roll-button").click(function() {

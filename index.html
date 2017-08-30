@@ -175,50 +175,60 @@
       </form>
     </div>
 
-    <!-- beginning name form -->
-    <!-- <div class="form-div">
-      <form id="name-form" class="form-group">
-        <label for="playerName">Enter your name:</label>
-        <input type="text" name="playerName" id="playerName" class="form-control">
-        <button type="submit" class="btn btn-primary" name="button">Play</button>
-      </form>
-    </div> -->
-
+    <!-- askes user for number of players -->
     <div class="player-count">
-      <form class="form-group" id=player-count>
+      <form class="form-group" id="player-count">
         <label for="howManyPlayers">How many players?</label>
         <div class="radio">
           <label>
-            <input type="radio" name="flavor" value="1">
+            <input type="radio" name="count" value="1">
             <img class="player-count-dice" src="img/1.svg">
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="flavor" value="2">
+            <input type="radio" name="count" value="2">
             <img class="player-count-dice" src="img/2.svg">
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="flavor" value="3">
+            <input type="radio" name="count" value="3">
             <img class="player-count-dice" src="img/3.svg">
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="flavor" value="4">
+            <input type="radio" name="count" value="4">
             <img class="player-count-dice" src="img/4.svg">
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="flavor" value="5">
+            <input type="radio" name="count" value="5">
             <img class="player-count-dice" src="img/5.svg">
           </label>
         </div>
-      </form>
+        <div class="radio">
+          <label>
+            <input type="radio" name="count" value="6">
+            <img class="player-count-dice" src="img/6.svg">
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary" name="button">Enter</button>
     </div>
+
+
+    <!-- beginning name form -->
+    <div id="name-div">
+      <div id="name-form">
+        <button type="submit" class="btn btn-primary" name="button">play</button>
+      </div>
+    </div>
+
+
+
+
 
     <!-- score board -->
     <div class = "board">

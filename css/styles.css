@@ -26,7 +26,11 @@ h2 {
   font-weight: bold;
 }
 
-.form-div, .end, .player-count {
+#name-div {
+  display: none;
+}
+
+.form-div, .end, .player-count, #name-div {
   position: fixed; /* Sit on top of the page content */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
@@ -43,7 +47,7 @@ h2 {
   height: 100px;
 }
 
-form{
+form, #name-form{
   position: absolute;
   top: 40%;
   left: 50%;
