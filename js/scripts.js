@@ -474,6 +474,7 @@ $(document).ready(function() {
     extraYahtzeeTotal = parseInt($("#result-extra-yahtzee").text());
 
     updateTotals();
+    $(".btn-submit").removeAttr('disabled');
   })
 
   $("#playChance").click(function() {
