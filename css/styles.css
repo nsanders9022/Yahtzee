@@ -44,7 +44,7 @@ h2 {
 }
 
 .player-count-dice {
-  height: 100px;
+  height: 75px;
 }
 
 form, #name-form{
@@ -63,20 +63,21 @@ form, #name-form{
 }
 
 label {
-  font-size: 50px;
-  color: white;
+  font-size: 30px;
+  color: black;
+  text-align: left;
 }
 
 input {
   color: black;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .btn-primary, .btn-warning {
   font-size:25px;
   margin-top: 12px;
   margin-left: 5px;
-  width: 20%;
+  width: 100%;
 }
 
 .board {

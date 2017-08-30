@@ -226,6 +226,7 @@ function myFunction() {
     }
 }
 
+//dynamically creates inputs for each player's user name
 function usernameFields() {
   var nameForm = document.getElementById("name-form");
 
@@ -234,14 +235,25 @@ function usernameFields() {
   }
 
   for (i = 0; i < playerCount; i++) {
-    nameForm.appendChild(document.createTextNode("Player" + (i+1) + " user name"));
+    var label = document.createElement("label");
+    var labelText = document.createTextNode("Player " + (i+1) + " user name");
+    label.appendChild(labelText);
+    nameForm.appendChild(label);
 
     var input = document.createElement("input");
     input.type = "text";
     input.name = "player" + i;
+    input.class = "playerNameInput";
     nameForm.appendChild(input);
     nameForm.appendChild(document.createElement("br"));
   }
+
+  var button = document.createElement("button");
+  button.setAttribute("class","btn btn-primary");
+  var buttonText = document.createTextNode("Play");
+  button.appendChild(buttonText);
+  nameForm.appendChild(button)
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
