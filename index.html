@@ -228,231 +228,240 @@
 
 
 
+    <div class="row">
+      <div class="col-xs-3">
+        <div id="player-info">
 
+        </div>
+      </div>
+      <div class="col-xs-9">
+        <div class = "board">
+
+          <div class="row" id="total">
+            <div class="col-xs-12">
+              <div class="col-xs-4">
+                <span id="name"></span><span class="playName">Total Score</span>
+              </div>
+              <div class="col-xs-4">
+                <span id="result-overall-total" class="playResult"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Ones</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-ones" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playOnes">Submit</button>
+              </div>
+            </div>
+
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">3 of a Kind</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-three-kind" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit"  id="playThreeKind">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Twos</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-twos" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playTwos">Submit</button>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">4 of a Kind</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-four-kind" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playFourKind">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Threes</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-threes" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playThrees">Submit</button>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Full House (25pts)</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-full-house" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playFullHouse">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Fours</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-fours" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playFours">Submit</button>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Small Straight (30pts)</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-small-straight" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playSmallStraight">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Fives</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-fives" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playFives">Submit</button>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Large Straight (40pts)</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-large-straight" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playLargeStraight">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Sixes</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-sixes" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playSixes">Submit</button>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Yahtzee (50pts)</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-yahtzee" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playYahtzee">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Extra Yahtzee (100pts)</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-extra-yahtzee" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playExtraYahtzee">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Bonus (35pts)</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-bonus" class="playResult"></span>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Chance</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-chance" class="playResult"></span>
+              </div>
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-submit" id="playChance">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row column-totals">
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Left Total</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-left-total" class="playResult"></span>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-5">
+                <span class="playName">Right Total</span>
+              </div>
+              <div class="col-xs-3">
+                <span id="result-right-total" class="playResult"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
 
     <!-- score board -->
-    <div class = "board">
-
-      <div class="row" id="total">
-        <div class="col-xs-12">
-          <div class="col-xs-4">
-            <span id="name"></span><span class="playName">Total Score</span>
-          </div>
-          <div class="col-xs-4">
-            <span id="result-overall-total" class="playResult"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Ones</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-ones" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playOnes">Submit</button>
-          </div>
-        </div>
-
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">3 of a Kind</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-three-kind" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit"  id="playThreeKind">Submit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Twos</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-twos" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playTwos">Submit</button>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">4 of a Kind</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-four-kind" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playFourKind">Submit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Threes</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-threes" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playThrees">Submit</button>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Full House (25pts)</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-full-house" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playFullHouse">Submit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Fours</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-fours" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playFours">Submit</button>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Small Straight (30pts)</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-small-straight" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playSmallStraight">Submit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Fives</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-fives" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playFives">Submit</button>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Large Straight (40pts)</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-large-straight" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playLargeStraight">Submit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Sixes</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-sixes" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playSixes">Submit</button>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Yahtzee (50pts)</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-yahtzee" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playYahtzee">Submit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6">
-        </div>
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Extra Yahtzee (100pts)</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-extra-yahtzee" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playExtraYahtzee">Submit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Bonus (35pts)</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-bonus" class="playResult"></span>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Chance</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-chance" class="playResult"></span>
-          </div>
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-submit" id="playChance">Submit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row column-totals">
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Left Total</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-left-total" class="playResult"></span>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="col-xs-5">
-            <span class="playName">Right Total</span>
-          </div>
-          <div class="col-xs-3">
-            <span id="result-right-total" class="playResult"></span>
-          </div>
-        </div>
-      </div>
-
-    </div>
 
     <!-- roll dice button -->
     <button type="button" name="button" class="btn btn-success" id="roll-button">Roll Dice<span id="dots"></span></button>
