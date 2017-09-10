@@ -370,7 +370,7 @@ $(document).ready(function() {
       console.log(players)
       var playerInfo = document.getElementById("player-info");
       for (var i = 0; i < players.length; i++) {
-        playerInfo.innerHTML += '<div id = player' + i+1 +'info>' + players[i].name + ': ' + players[i].score + '</div>'
+        playerInfo.innerHTML += '<div id = player' + i+1 +'info>' + players[i].name + ': ' +  players[i].score + '</div>'
       }
     })
   })
