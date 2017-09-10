@@ -18,11 +18,12 @@ var chanceTotal = 0;
 var rollCount = 0;
 var submitCount = 14;
 var playerCount = 0;
-var playerArray = [];
-var players = {}
+var nameArray = [];
+var players = []
 
 //Constructor for Player Object
-function Player(name) {
+function Player(id, name) {
+  this.id = id;
   this.name = name;
   this.score = 0;
   // this.id = id;
@@ -258,17 +259,21 @@ function usernameFields() {
   var buttonText = document.createTextNode("Play");
   button.appendChild(buttonText);
   nameForm.appendChild(button)
-
 }
 
+function createPlayers(nameArray) {
+  for (var i = 0; i < nameArray.length; i++) {
+    var newPlayer = new Player (i+1, nameArray[i])
+    players.push(newPlayer);
+  }
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
-
   //on page load
-  //sekts roll button to have 3 dot image
+  //sets roll button to have 3 dot image
   $("#dots").html('<img class="dots-img" src="img/' + rollCount + 'dots.png">');
   //disable the submit buttons
   $(".btn-submit").attr('disabled', 'disabled');
@@ -346,20 +351,24 @@ $(document).ready(function() {
     console.log(playerCount);
 
     $(".player-count").hide();
+    //form is displayed with inputs for each player's username
     usernameFields();
     $("#name-div").show()
 
+    //when username form is submitted...
     $("#name-button").click(function() {
       $("#name-div").hide();
       for (var i = 0; i < playerCount; i++) {
         var playerName = $("#player" + [i]).val();
-        playerArray.push(playerName);
-        players[playerName] = Object.create(Player);
-        playerName.name = playerArray[i];
-        console.log('player ' + ('player' + i) + " created!");
+        nameArray.push(playerName);
+        // players[playerName] = Object.create(Player);
+        // playerName.name = nameArray[i];
+        // console.log('player ' + ('player' + i) + " created!");
       }
-    })
 
+      createPlayers(nameArray);
+      console.log(players)
+    })
 
 
 
@@ -383,7 +392,7 @@ $(document).ready(function() {
     $("#dots").html('<img class="dots-img" src="img/' + rollCount + 'dots.png">');
     console.log(rollCount)
 
-    //Dice Roll prototype method is called on all 5 dice (dices are rolled)
+    //Dice Roll prototype method is called on all 5 dice (dice are rolled)
     diceOne.roll();
     diceTwo.roll();
     diceThree.roll();
