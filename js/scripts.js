@@ -367,6 +367,7 @@ $(document).ready(function() {
       }
 
       createPlayers(nameArray);
+
       console.log(players)
       var playerInfo = document.getElementById("player-info");
       for (var i = 0; i < players.length; i++) {
